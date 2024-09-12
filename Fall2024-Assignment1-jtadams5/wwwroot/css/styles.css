@@ -1,0 +1,69 @@
+﻿/* Basic reset to remove default padding/margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: tron-legacy-full;
+    src: url(tron-legacy-full.otf)
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #193F4A80;
+}
+
+nav {
+    background-color: #030504FF; /* Dark background color, the last 2 nums control transparency */
+    padding: 10px 10px 10px 10px;
+    width: 100vw;
+    top:0;
+    position: fixed; /* Needed for the glow? */
+}
+    nav .logo {
+        font-family: tron-legacy-full; /* Surprised this worked tbh*/
+        font-size: 7vw; /* Good size for a title*/
+        text-align: center;
+        color: #2F8CA3;
+        text-shadow: 0 0 5px #2F8CA3;
+    }
+    nav::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #2F8CA3;
+        box-shadow: 0 0 10px #2F8CA3, 0 0 20px #2F8CA3, 0 0 30px #2F8CA3, 0 0 45px #2F8CA3, 0 0 60px #2F8CA3, 0 0 75px #2F8CA3;
+        pointer-events: none;
+    }
+
+.nav-links {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Align items horizontally */
+    justify-content: space-around; /* Space links evenly */
+}
+
+    .nav-links li {
+        display: inline; /* Makes the list be a horizontal */
+    }
+
+    .nav-links a {
+        color: white; /* White text */
+        text-decoration: none; /* Remove underline */
+        padding: 14px 20px;
+        display: block;
+    }
+
+        .nav-links a:hover {
+            background-color: #575757; /* Change color on hover */
+            border-radius: 4px;
+        }
+
+.homepage {
+    display: flex;
+    margin-top: 213px;
+}

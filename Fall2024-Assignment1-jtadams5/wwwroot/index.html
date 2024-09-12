@@ -1,10 +1,47 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>Erm what the sigma!!!!</h1>
+    <nav>
+        <h1 class="logo">
+            TRON: LEGACY 
+        </h1>
+        <!--Temporary Logo Holder!-->
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trailer.html">Meet the Cast</a></li>
+            <li><a href="services.html">Watch Trailers</a></li>
+            <li><a href="contact.html">Write a Review</a></li>
+        </ul>
+    </nav>
+    <main class="homepage">
+        <div class="trailer-split">
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/L9szn1QQfas?si=YvNCbH29MX6sM9t5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="reviews">
+            </div>
+        </div>
+    </main>
+    <script>
+        function adjustMargin() {
+            const navbar = document.querySelector('nav');
+            const container = document.querySelector('.homepage');
+            console.log(container);
+            const navbarHeight = navbar.offsetHeight;
+            var styles = window.getComputedStyle(navbar);
+            var margin = parseFloat(styles['margin-top']) + parseFloat(styles['margin-bottom']);
+            var total = Math.ceil(margin + navbarHeight);
+            console.log(navbarHeight, margin, total);
+            container.style.margin.top = total.toString();
+        }
+        window.onload = adjustMargin;
+        window.onresize = adjustMargin;
+    </script>
 </body>
 </html>
