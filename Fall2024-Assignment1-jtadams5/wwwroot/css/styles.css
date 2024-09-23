@@ -5,6 +5,22 @@
     box-sizing: border-box;
 }
 
+.all {
+    display: none;
+}
+
+.all.active {
+    display: flex;
+
+    justify-content: flex-start;
+    align-content: center;
+    margin-top: 213px;
+    gap: 20px;
+
+    font-family: "Handjet", sans-serif;
+    font-size: xx-large;
+}
+
 @font-face {
     font-family: tron-legacy-full;
     src: url(tron-legacy-full.otf)
@@ -14,6 +30,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #193F4A80;
 }
+
 
 nav {
     background-color: #030504FF; /* Dark background color, the last 2 nums control transparency */
@@ -63,7 +80,22 @@ nav {
             border-radius: 4px;
         }
 
-.homepage {
-    display: flex;
-    margin-top: 213px;
+#home {
+    padding: 10px 10px 10px 10px;
+    text-align:center;
+    justify-content:center;
 }
+
+#cast {
+    padding: 10px 10px 10px 10px;
+    justify-content:center;
+    text-align:center;
+    flex-direction: column;
+}
+    #cast.ul {
+        list-style: circle;
+    }
+
+    #cast li {
+        font-size: xx-large;
+    }

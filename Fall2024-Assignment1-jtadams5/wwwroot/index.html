@@ -5,33 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap" rel="stylesheet">  
 </head>
 <body>
     <nav>
-        <h1 class="logo">
+        <h1 class="logo" id="Title">
             TRON: LEGACY 
         </h1>
         <!--Temporary Logo Holder!-->
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="trailer.html">Meet the Cast</a></li>
-            <li><a href="services.html">Watch Trailers</a></li>
-            <li><a href="contact.html">Write a Review</a></li>
+            <li><a onclick="switchDiv('home')">Home</a></li>
+            <li><a onclick="switchDiv('cast')">Meet the Cast</a></li>
+            <li><a href="https://www.imdb.com/title/tt1104001/">Read Reviews on IMDB</a></li>
         </ul>
     </nav>
-    <main class="homepage">
-        <div class="trailer-split">
-            <div class="video">
+    <main>
+        <div class="all active" id="home">
+            <div id="home-video">
+                <p>The son of a virtual world designer goes looking for his father and ends up inside the digital world that his father designed. He meets his father's corrupted creation and a unique ally who was born inside the digital world.</p>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/L9szn1QQfas?si=YvNCbH29MX6sM9t5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h5>6.8 / 10 on IMDB</h5>
             </div>
-            <div class="reviews">
+        </div>
+        <div class="all" id="cast">
+            <h1>Tron: Legacy Main Characters</h1>
+            <div id="pretty-list">
+                <ul id="cast-list">
+                    <li>Garret Hedlund > Sam Flynn</li>
+                    <li>Jeff Bridges -> Kevin Flynn / Clu</li>
+                    <li>Olivia Wilde -> Quorra</li>
+                    <li>Michael Sheen -> Zeus</li>
+                </ul>
             </div>
         </div>
     </main>
     <script>
+        // Switch which div we are showing (So I don't need to make more HTML files (I am lazy))
+        function switchDiv(id) {
+            let divs = document.querySelectorAll('.all');
+            divs.forEach(div => {
+                div.classList.remove('active');
+            });
+
+            document.getElementById(id).classList.add('active');
+        }
+
         function adjustMargin() {
             const navbar = document.querySelector('nav');
-            const container = document.querySelector('.homepage');
+            const container = document.querySelector('.home');
             console.log(container);
             const navbarHeight = navbar.offsetHeight;
             var styles = window.getComputedStyle(navbar);
@@ -42,6 +65,9 @@
         }
         window.onload = adjustMargin;
         window.onresize = adjustMargin;
+
+        
+
     </script>
 </body>
 </html>
